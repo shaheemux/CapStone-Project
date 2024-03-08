@@ -15,13 +15,13 @@ export default {
     },
 
     addUser:async(req,res)=>{
-        const {UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_pass,User_profile} = req.body;
-        const post = await addUser(UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_pass,User_profile);
+        const {UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password} = req.body;
+        const post = await addUser(UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password);
         res.send(await getUsers());  
     },
 
     editUser:async(req,res)=>{
-        let {First_name,Last_name,User_age,Gender,User_role,Email_add, User_pass, User_Profile}=req.body
+        let {First_name,Last_name,User_age,Gender,User_role,Email_add, User_password}=req.body
 
         const [user]=await getUser(+req.params.id)
  
@@ -32,8 +32,7 @@ export default {
         Gender ?  Gender= Gender: { Gender}=user
         User_role ? User_role=User_role: {User_role}=user
         Email_add ? Email_add=Email_add: {Email_add}=user
-        User_pass ? User_pass=User_pass: {User_pass}=user
-        User_Profile ? User_Profile=User_Profile: {User_Profile}=user
+        User_password ? User_password=User_password: {User_password}=user
  
         await editUser(First_name,Last_name,User_age,Gender,User_role,Email_add, User_pass,User_Profile,+req.params.id)
  

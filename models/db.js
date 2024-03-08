@@ -4,36 +4,37 @@ import { pool } from '../config/config.js'
 async function getProducts() {
     const [Product] = await pool.query(`
     SELECT * FROM 
-    products 
+    Products 
     `)
     return Product
 }
 async function getProduct(id) {
     const [Product] = await pool.query(`
-    SELECT * FROM products WHERE id = ?
+    SELECT * FROM Products WHERE id = ?
     `, [id])
     return Product
 }
 
 async function deleteProduct(id){
     const [Product] = await pool.query(`
-    DELETE FROM products WHERE id = ?
+    DELETE FROM Products
+     WHERE id = ?
     `, [id])
 }
 
-const editProduct=async(prod_name,quantity,price,description,prod_url,id)=>{
+const editProduct=async(prod_name,price,prod_url,id)=>{
     await pool.query(`
-    UPDATE products SET prod_name=?, quantity=?, price=?, description=?, prod_url=? 
+    UPDATE Products SET prod_name=?, price=?,prod_url=? 
     WHERE id=? `,
-     [prod_name,quantity,price, description,prod_url,id])
+     [prod_name,price,prod_url,id])
      return getProducts()
 }
 
 
-const addProduct=async(prod_name,quantity,price,description,prod_url)=>{
+const addProduct=async(prod_name,price,prod_url)=>{
     await pool.query(`
-    INSERT INTO products (prod_name,quantity,price,description,prod_url) values(?,?,?,?,?) `,
-    [prod_name,quantity,price,description,prod_url])
+    INSERT INTO Products (prod_name,price,prod_url) values(?,?,?) `,
+    [prod_name,price,prod_url])
 } 
 
 
@@ -57,11 +58,11 @@ async function deleteUser(UserId){
     `, [UserId])
 }
 
-const editUser =async(First_name,Last_name,User_age,Gender,User_role,Email_add,User_pass, User_Profile, UserId)=>{
+const editUser =async(First_name,Last_name,User_age,Gender,User_role,Email_add,User_password, UserId)=>{
     await pool.query(` 
-    UPDATE Users SET First_name=?, Last_name=?, User_age=?, Gender=?, User_role=?, Email_add=?, User_pass = ?, User_profile = ?
+    UPDATE Users SET First_name=?, Last_name=?, User_age=?, Gender=?, User_role=?, Email_add=?, User_password
     WHERE UserId=? `,
-     [First_name,Last_name,User_age,Gender,User_role,Email_add,  User_pass, User_Profile, UserId])
+     [First_name,Last_name,User_age,Gender,User_role,Email_add,  User_password, UserId])
     //  return getProducts()
 }
 
