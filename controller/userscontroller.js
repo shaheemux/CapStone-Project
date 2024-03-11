@@ -1,4 +1,20 @@
 import { getUsers, getUser, deleteUser, addUser, editUser } from '../models/db.js';
+import bcrypt from 'bcryptjs';
+
+export async function signupUser(req, res) {
+  const { email, password } = req.body;
+
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const user = await addUser({ email, password: hashedPassword });
+
+    res.status(201).send({ user });
+  } catch (error) {
+    res.status(500).send({ error: 'An error occurred while signing up.' });
+  }
+}
 
 export default {
     getAllUsers : async (req, res)=>{
@@ -41,3 +57,7 @@ export default {
      }
 
 }
+
+
+
+
