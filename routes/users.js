@@ -1,16 +1,11 @@
 import  express from 'express';
 import controller from '../controller/userscontroller.js';
-import { signupUser } from '../controller/userscontroller.js'
 
 const router = express.Router();
 
 router.route('/')
 .get(controller.getAllUsers)
 .post(controller.addUser)
-.post(signupUser)
-
-
-
 
 
 router.route('/:id')

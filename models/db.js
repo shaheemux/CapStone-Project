@@ -58,19 +58,19 @@ async function deleteUser(UserId){
     `, [UserId])
 }
 
-const editUser =async(First_name,Last_name,User_age,Gender,User_role,Email_add,User_password, UserId)=>{
+const editUser =async(First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_profile)=>{
     await pool.query(` 
-    UPDATE Users SET First_name=?, Last_name=?, User_age=?, Gender=?, User_role=?, Email_add=?, User_password
+    UPDATE Users SET First_name=?, Last_name=?, User_age=?, Gender=?, User_role=?, Email_add=?,User_profile, User_password=?
     WHERE UserId=? `,
-     [First_name,Last_name,User_age,Gender,User_role,Email_add,  User_password, UserId])
-    //  return getProducts()
+     [First_name,Last_name,User_age,Gender,User_role,Email_add, User_password,User_profile])
+     return getProducts()
 }
 
 
-const addUser=async(UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_pass,User_Profile)=>{
+const addUser=async(UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_Profile)=>{
     await pool.query(`
-    INSERT INTO Users (UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_pass,User_profile) values(?,?,?,?,?,?,?,?,?) `,
-    [UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_pass,User_Profile])
+    INSERT INTO Users (UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_profile) values(?,?,?,?,?,?,?,?,?) `,
+    [UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_Profile])
 }
 
 
