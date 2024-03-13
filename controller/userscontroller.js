@@ -20,26 +20,35 @@ export default {
         res.send(await getUsers());  
     },
 
-    editUser:async(req,res)=>{
-        let {First_name,Last_name,User_age,Gender,User_role,Email_add, User_password,User_profile}=req.body
 
-        const [user]=await getUser(+req.params.id)
- 
+    editUser: async (req, res) => {
+      try {
+          const [user] = await getUser(+req.params.id);
+  
 
-        First_name ? First_name=First_name: {First_name}=user
-        Last_name ? Last_name=Last_name: {Last_name}=user
-        User_age ? User_age=User_age: {User_age}=user
-        Gender ?  Gender= Gender: { Gender}=user
-        User_role ? User_role=User_role: {User_role}=user
-        Email_add ? Email_add=Email_add: {Email_add}=user
-        User_password ? User_password=User_password: {User_password}=user
-        User_profile ? User_profile=User_profile: {User_profile}=user
- 
-        await editUser(First_name,Last_name,User_age,Gender,User_role,Email_add, User_password,User_profile,+req.params.id)
- 
-        res.send(await getUsers())
- 
-     }
+          const {
+              First_name = user.First_name,
+              Last_name = user.Last_name,
+              User_age = user.User_age,
+              Gender = user.Gender,
+              User_role = user.User_role,
+              Email_add = user.Email_add,
+              User_password = user.User_password,
+              User_profile = user.User_profile,
+          } = req.body;
+  
+          await editUser(First_name, Last_name, User_age, Gender, User_role, Email_add, User_password, User_profile, +req.params.id);
+  
+          const users = await getUsers();
+          res.send(users);
+      } catch (error) {
+          console.error(error);
+          res.status(500).send('An error occurred while updating the user.');
+      }
+  },
+  login:async(req, res)=>{
+    
+  }
 
 }
 

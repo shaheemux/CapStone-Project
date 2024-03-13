@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import { config } from 'dotenv'
 import productsRoute from './routes/products.js'
-import usersRoute from './routes/users.js'
+import usersRoute from './routes/users.js';
+import loginRouter from './routes/login.js';
 import bcrypt from 'bcrypt'
+import {auth} from './middleware/authentication.js'
 import jwt from 'jsonwebtoken'
 config()
 
@@ -17,6 +19,8 @@ app.use(express.json())
 app.use(express.static( 'public' ))
 app.use('/products', productsRoute)
 app.use('/users', usersRoute) 
+app.use('/login',auth,loginRouter)
+
 
 
 

@@ -1,5 +1,4 @@
-import { pool } from '../config/config.js'
-
+import { pool } from '../config/config.js';
 
 async function getProducts() {
     const [Product] = await pool.query(`
@@ -58,23 +57,26 @@ async function deleteUser(UserId){
     `, [UserId])
 }
 
-const editUser =async(First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_profile)=>{
-    await pool.query(` 
-    UPDATE Users SET First_name=?, Last_name=?, User_age=?, Gender=?, User_role=?, Email_add=?,User_profile, User_password=?
-    WHERE UserId=? `,
-     [First_name,Last_name,User_age,Gender,User_role,Email_add, User_password,User_profile])
-     return getProducts()
-}
-
-
 const addUser=async(UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_Profile)=>{
     await pool.query(`
-    INSERT INTO Users (UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_profile) values(?,?,?,?,?,?,?,?,?) `,
+    INSERT INTO Users (UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_profile) values(?,?,?,?,?,?,?,?,?)`,
     [UserId,First_name,Last_name,User_age,Gender,User_role,Email_add,User_password,User_Profile])
 }
 
+const editUser = async (First_name, Last_name, User_age, Gender, User_role, Email_add, User_password, User_profile, UserId) => {
+    await pool.query(`
+        UPDATE Users SET First_name=?, Last_name=?, User_age=?, Gender=?, User_role=?, Email_add=?, User_password=?, User_profile=?
+        WHERE UserId=?
+    `, [First_name, Last_name, User_age, Gender, User_role, Email_add, User_password, User_profile, UserId]);
+}
+
+const checkPassword= async(userPassword)=>{
+    const [[{password}]]= await pool.query(`
+    SELECT password FROM users WHERE Email_add =?`, [userPassword])
+        return password
+}
 
 
 
 
-export  {getProducts, getProduct, deleteProduct, editProduct, addProduct, getUsers, getUser, deleteUser, editUser, addUser}
+export  {getProducts, getProduct, deleteProduct, editProduct, addProduct, getUsers, getUser, deleteUser,addUser, editUser, checkPassword}
