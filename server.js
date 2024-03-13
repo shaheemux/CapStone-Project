@@ -6,7 +6,6 @@ import usersRoute from './routes/users.js';
 import loginRouter from './routes/login.js';
 import bcrypt from 'bcrypt'
 import {auth} from './middleware/authentication.js'
-import jwt from 'jsonwebtoken'
 config()
 
 
