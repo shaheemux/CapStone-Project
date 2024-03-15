@@ -4,8 +4,8 @@ import { config } from 'dotenv'
 import productsRoute from './routes/products.js'
 import usersRoute from './routes/users.js';
 import loginRouter from './routes/login.js';
-import bcrypt from 'bcrypt'
 import {auth} from './middleware/authentication.js'
+import bcrypt from 'bcryptjs';
 config()
 
 

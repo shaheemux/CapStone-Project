@@ -70,10 +70,14 @@ const editUser = async (First_name, Last_name, User_age, Gender, User_role, Emai
     `, [First_name, Last_name, User_age, Gender, User_role, Email_add, User_password, User_profile, UserId]);
 }
 
-const checkPassword= async(userPassword)=>{
-    const [[{password}]]= await pool.query(`
-    SELECT password FROM users WHERE Email_add =?`, [userPassword])
-        return password
+const checkPassword = async (email) => {
+       const [rows] = await pool.query(`SELECT password FROM users WHERE Email_add = ?`, [email]);
+
+    if (rows.length > 0) {
+        return rows[0].password;
+    } else {
+        return null;
+    }
 }
 
 
