@@ -1,7 +1,7 @@
 <template>
   <navbar/>
   <router-view/>
-  <footers/>
+  
 
 </template>
 

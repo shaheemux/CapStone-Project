@@ -1,9 +1,11 @@
 <template>
+  <div id="login">
     <form @submit.prevent="login">
        <input v-model="email" type="email" placeholder="Email" required />
        <input v-model="password" type="password" placeholder="Password" required />
        <button type="submit">Login</button>
-    </form>
+     </form>
+    </div>
    </template>
    
    <script>
@@ -32,3 +34,10 @@
    };
    </script>
    
+
+<style scoped>
+ #login{
+  margin: 5.5rem;
+ }  
+  
+</style>

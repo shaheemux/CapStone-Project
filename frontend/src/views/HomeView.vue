@@ -1,9 +1,7 @@
 <template>
  <div class="home">  
-  
-
-<div id="default-carousel" class="relative w-full p-4" data-carousel="slide">
-    <!-- Carousel wrapper -->
+   <div id="default-carousel" class="relative w-full p-4" data-carousel="slide">
+    
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -54,48 +52,83 @@
   </div>
   
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-7 p-8">
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://i.postimg.cc/qBCgbyVW/masculine-menhappy-c-jpg.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/qBCgbyVW/masculine-menhappy-c-jpg.jpg" alt="">
     </div>
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://i.postimg.cc/CMDLH0bg/fossil-watches-singl-jpg-3.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/CMDLH0bg/fossil-watches-singl-jpg-3.jpg" alt="">
     </div>
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://i.postimg.cc/7651QhwX/images-of-fossil-wat-jpg-4.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/7651QhwX/images-of-fossil-wat-jpg-4.jpg" alt="">
     </div>
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/prcB7fCL/fossil-watches-singl-jpg-2.jpg" alt="">
     </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
-    </div>
-</div>
+    
 
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/43QDF3KF/images-of-fossil-wat-jpg-1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/YCHRhz9T/i-am-going-to-reques-jpg.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/HLgzK4XT/fossil-watches-singl-2.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/mDZwZLmq/fossil-watches-singl-jpg-1.jpg" alt="">
+    </div>
+  </div>
  </div>
 </template>
 
 <style scoped>
+
+.home{
+    margin-top: 3.5rem;
+}
+
+img{
+    border-radius: 5px;
+}
+
+.relative{
+   animation: fadeInDownBigFromLeft 1s ease-out;
+
+}
+
+@keyframes fadeInDownBigFromLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.h-auto{
+    animation: fadeInDownBigFromLeft 1s ease-out;
+}
+
+
+@keyframes animate__fadeInLeft {
+ from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+ }
+
+ to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+ }
+}
+
+
+
 
 </style>

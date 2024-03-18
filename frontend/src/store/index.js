@@ -7,12 +7,16 @@ axios.defaults.withCredentials = true
 export default createStore({
   state: {
     loggedIn: false,
+    watches: []
   },
   getters: {
   },
   mutations: {
     setLogged(state,data){
       state.loggedIn=data
+    },
+    setWatches(state,data){
+      state.watches = data;
     }
   },
   actions: {
@@ -23,6 +27,11 @@ export default createStore({
       commit('setLogged',true)
       router.push('/')
       window.location.reload()
+    },
+    async getWatches({ commit }){
+      let {data}=await axios.get(BASE_URL+ "/Products");
+      console.log(data);
+      commit("setWatches",data)
     }
   },
   modules: {
