@@ -13,10 +13,9 @@ const app = express()
 const port = +process.env.MYSQL_ADDON_PORT || 3001
 
 
-app.use(cors({
-    origin: 'https://localhost:8080',
-    Credentials: true
-}))
+app.use(cors())
+
+
 app.use(express.json())
 app.use(express.static( 'public' ))
 app.use('/products', productsRoute)
