@@ -54,15 +54,15 @@
   </div>
   
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg" src="https://i.postimg.cc/qBCgbyVW/masculine-menhappy-c-jpg.jpg" alt="">
     </div>
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg" src="https://i.postimg.cc/CMDLH0bg/fossil-watches-singl-jpg-3.jpg" alt="">
     </div>
     <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+        <img class="h-auto max-w-full rounded-lg" src="https://i.postimg.cc/7651QhwX/images-of-fossil-wat-jpg-4.jpg" alt="">
     </div>
     <div>
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
