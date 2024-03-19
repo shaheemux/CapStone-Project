@@ -20,10 +20,10 @@ export const registerUser = async (req, res) => {
 
    export const loginUser = async (req, res) => {
     try {
-       const { email, password } = req.body;
-       const [user] = await db.execute('SELECT * FROM users WHERE email = ?', [email]);
+       const { Email_add, User_password } = req.body;
+       const [user] = await db.execute('SELECT * FROM users WHERE Email_add = ?', [Email_add]);
    
-       if (!user || !(await bcrypt.compare(password, user[0].password))) {
+       if (!user || !(await bcrypt.compare(User_password, user[0].User_password))) {
          return res.status(401).json({ error: 'Invalid credentials' });
        }
    

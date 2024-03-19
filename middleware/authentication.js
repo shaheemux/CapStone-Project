@@ -5,9 +5,9 @@ import { checkPassword } from '../models/db.js';
 
 const auth =async(req,res,next)=>{
   
-    const {password,Email_add}= req.body
+    const {User_password,Email_add}= req.body
     const hashedPassword=await checkPassword(Email_add)
-    bcrypt.compare(password,hashedPassword,(err,result)=>{
+    bcrypt.compare(User_password,hashedPassword,(err,result)=>{
         if (err) throw err
         if(result===true){
             const {Email_add} = req.body
