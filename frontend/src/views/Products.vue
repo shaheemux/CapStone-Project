@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container p-4">
     <div class="row">
       <div class="col">
         <input v-model="searchQuery" type="text" placeholder="Search product by name" class="form-control">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="row" v-else>
+    <div class="row p-3" v-else>
       <p class="lead">Loading</p>
     </div>
   </div>
@@ -63,17 +63,18 @@ export default {
 
 <style scoped>
 .container{
+  background-color: blue;
   margin-top: 10rem;
   height: 100vh;
   border: solid 1px;
 }
 
-/* .card {
+.card {
   margin-bottom: 20px;
 }
 .product-image {
   max-width: 100px;
   max-height: 100px;
   border-radius: 10px;
-} */
+}
 </style>

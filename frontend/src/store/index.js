@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-const BASE_URL="http://localhost:3001";
+const lifeURL = "https://capstone-project-3diq.onrender.com"
 
 export default createStore({
   state: {
