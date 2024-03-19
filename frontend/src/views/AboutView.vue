@@ -1,5 +1,16 @@
 <template>
-  <div class="about bg-black ">
-    <h1>This is an about page</h1>
+  <div class="about">
+
+
   </div>
 </template>
+
+<style scoped>
+  .about{
+    height: 100vh;
+    border: solid 1px black;
+    margin-top: 4.5rem;
+    display: grid;
+  }
+
+</style>

@@ -57,7 +57,7 @@ export default createStore({
     
     async fetchProducts(context) {
       try{
-        const {data} = await axios.get(`${lifeURL}products`)
+        const {data} = await axios.get(`${lifeURL}/products`)
         console.log(data);
         context.commit("setProducts", data)
       }catch(e){
