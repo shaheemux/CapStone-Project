@@ -159,10 +159,10 @@
 
 <style scoped>
 div{
-    font-family: "Thasadith", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1rem;
+    font-family: "Thasadith", sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    font-size: 1rem !important;
 }
 
 .absolute{
@@ -171,8 +171,8 @@ div{
 }
 
 .bg-white{
-    background: transparent;
-    backdrop-filter: blur(5px);
+    background: transparent !important;
+    backdrop-filter: blur(5px)!important;
 }
 
 img{

@@ -22,7 +22,8 @@
     "@vue/cli-plugin-pwa": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "rollup-plugin-replace": "^2.2.0"
   },
   "description": "```\r npm install\r ```",
   "main": "babel.config.js",

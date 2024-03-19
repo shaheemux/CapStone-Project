@@ -19,9 +19,6 @@
         </div>
       </div>
     </div>
-    <div class="row p-3" v-else>
-      <p class="lead">Loading</p>
-    </div>
   </div>
 </template>
 
@@ -63,18 +60,10 @@ export default {
 
 <style scoped>
 .container{
-  background-color: blue;
+  margin: 0;
   margin-top: 10rem;
-  height: 100vh;
+  height: 100%;
   border: solid 1px;
 }
 
-.card {
-  margin-bottom: 20px;
-}
-.product-image {
-  max-width: 100px;
-  max-height: 100px;
-  border-radius: 10px;
-}
 </style>
