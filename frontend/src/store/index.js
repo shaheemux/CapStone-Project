@@ -1,39 +1,148 @@
-import { createStore } from "vuex";
-import axios from "axios";
-import router from '@/router';
+import { createStore } from 'vuex'
+import axios from 'axios'
 const BASE_URL="http://localhost:3001";
-axios.defaults.withCredentials = true
 
 export default createStore({
   state: {
-    loggedIn: false,
-    watches: []
+    users: null,
+    user: null,
+    products: null,
+    product: null,
+    spinner: false,
+    token: null,
+    msg: null
   },
   getters: {
   },
   mutations: {
-    setLogged(state,data){
-      state.loggedIn=data
+    setUsers(state, users){
+      state.users =users
     },
-    setWatches(state,data){
-      state.watches = data;
-    }
+    setUser(state, user){
+      state.user =user
+    },
+    setProducts(state, products){
+      state.products =products
+    },
+    setProduct(state, product){
+      state.product = product
+    },
+    setSpinner(state, value){
+      state.spinner = value
+    },
+    setToken(state, token){
+      state.token = token
+    },
+    setDeletionStatus(state, status) {
+      state.deletionStatus = status;
+    },
+    deleteUser(state, userID) {
+      const index = state.users.findIndex(user => user.userId === userID);
+      if (index !== -1) {
+        state.users.splice(index, 1);
+      }
+    },
   },
   actions: {
-    async checkPassword({commit},user) {
-      let {data}=await axios.post(BASE_URL+'/login',user);
-      $cookies.set('jwt',data.token)
-      alert(data.msg)
-      commit('setLogged',true)
-      router.push('/')
-      window.location.reload()
+    async fetchUsers(context) {
+      try{
+        const {data} = await axios.get(`${lifeURL}users`)
+        // console.log(data)
+        context.commit("setUsers", data.results)
+        console.log(data.results);
+      }catch(e){
+        context.commit("setMsg", "An error occured.")
+      }
     },
-    async getWatches({ commit }){
-      let {data}=await axios.get(BASE_URL+ "/Products");
-      console.log(data);
-      commit("setWatches",data)
+    
+    async fetchProducts(context) {
+      try{
+        const {data} = await axios.get(`${lifeURL}products`)
+        console.log(data);
+        context.commit("setProducts", data)
+      }catch(e){
+        context.commit("setMsg", "An error occured.")
+      }
+    },
+    async fetchProduct(context, id) {
+      try {
+        const { data } = await axios.get(`${lifeURL}products/${id}`);
+        context.commit("setProduct", data.result[0]);
+        console.log(data.result);
+      } catch (e) {
+        context.commit("setMsg", "An error occurred.");
+      }
+    },
+
+     // Action to delete a user
+     async deleteUser(context, userID) {
+      try {
+        context.commit("setDeletionStatus", null);
+
+        const response = await axios.delete(`${lifeURL}user/${userID}`);
+
+        if (response.status !== 200) {
+          throw new Error(`Failed to delete user. Status: ${response.status}`);
+        }
+
+        // You don't need to commit "deleteUser" mutation here
+        context.commit("setDeletionStatus", "success");
+      } catch (error) {
+        console.error("Error deleting user:", error);
+        context.commit("setDeletionStatus", "error");
+      }
+    },
+
+    
+    async deleteProduct(context, id) {
+      try {
+        context.commit("setDeletionStatus", null);
+        
+        const response = await axios.delete(`${lifeURL}products/${id}`);
+        
+        if (response.status !== 200) {
+          throw new Error(`Failed to delete product. Status: ${response.status}`);
+        }
+        
+        context.commit("removeProduct", id);
+        context.commit("setDeletionStatus", "success");
+      } catch (error) {
+        console.error("Error deleting product:", error);
+        context.commit("setDeletionStatus", "error");
+      }
+    },
+     updateProduct(context, updatedData) {
+      try {
+        const response = axios.put(`${lifeURL}products/${updatedData.prodID}`, updatedData);
+        
+        if (response.status !== 200) {
+          throw new Error(`Failed to update product. Status: ${response.status}`);
+        }
+        
+        context.commit("updateProduct", { id, updatedData });
+        context.commit("setEditStatus", "success");
+      } catch (error) {
+        console.error("Error editing product:", error);
+        context.commit("setEditStatus", "error");
+      }
+    },
+    async updateUser(context, { id, updatedData }) {
+      try {
+        const response = await axios.patch(`${lifeURL}/user/${userID}`, updatedData);
+        
+        if (response.status !== 200) {
+          throw new Error(`Failed to update user. Status: ${response.status}`);
+        }
+        context.commit("updateUser", { id, updatedData });
+        context.commit("setEditStatus", "success");
+      } catch (error) {
+        console.error("Error editing product:", error);
+        context.commit("setEditStatus", "error");
+      }
     }
   },
   modules: {
   }
 })
+
+

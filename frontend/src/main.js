@@ -4,5 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import  VueCookies  from "vue-cookies"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
 
 createApp(App).use(store).use(router).use(VueCookies).mount('#app')
