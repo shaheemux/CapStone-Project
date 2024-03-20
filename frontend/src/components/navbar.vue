@@ -54,7 +54,6 @@ img{
     background: transparent !important;
     backdrop-filter: blur(5px) !important;
 }
-
-
+ 
 
 </style>
