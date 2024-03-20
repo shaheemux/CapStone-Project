@@ -10,7 +10,6 @@
     height: 100vh;
     border: solid 1px black;
     margin-top: 4.5rem;
-    display: grid;
   }
 
 </style>

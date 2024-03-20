@@ -1,13 +1,11 @@
 <template>
  <div class="home">  
-   <div id="default-carousel" class="relative w-full p-4" data-carousel="slide">
+   <div id="default-carousel" class="relative w-full" data-carousel="slide">
     
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i.postimg.cc/8PJfpYXc/give-me-an-image-of.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            <!-- <h1 class="btn absolute"><router-link to="">View All</router-link></h1> -->
-            <button type="button" class="absolute">Green</button>
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -42,6 +40,26 @@
         </span>
     </button>
   </div>
+ 
+  <div class="aside">
+    <div class="content">
+
+        <div class="card1" id="text">
+            <img src="https://i.postimg.cc/G2qvZdHB/style.jpg" alt="">
+            <p class="p-4">Mens Watches</p>
+        </div>
+
+        <div class="card2" id="text">
+            <img src="https://i.postimg.cc/K8pWPhZ5/what-womens-watches-are-in-fashion-cover.webp" style="height: 185px;" alt="">
+            <p class="p-4"></p>
+        </div>
+
+        <div class="card3" id="text">
+            <img src="https://i.postimg.cc/D0Y9Hwpz/istockphoto-609908294-612x612.jpg" alt="">
+            <p style="color: rgb(0, 0, 0); padding: 1rem;"></p>
+        </div>    
+    </div>
+  </div>
  </div>
 </template>
 
@@ -49,9 +67,8 @@
 
 <style scoped>
 
-
 .home{
-    margin-top: 4.5rem;
+    margin-top: 5.5rem;
 }
 
 .company{
@@ -61,13 +78,8 @@
     justify-content: flex-start;
 }
 
-img{
-    border-radius: 5px;
-}
-
 .relative{
    animation: fadeInDownBigFromLeft 1s ease-out;
-
 }
 
 @keyframes fadeInDownBigFromLeft {
@@ -81,5 +93,107 @@ img{
       transform: translate3d(0, 0, 0);
     }
 }
+
+
+.aside{
+    padding: 2rem;
+    display: flex;
+    margin-TOP: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    display: grid;
+}
+
+.content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 1rem;
+    margin: auto;
+}
+
+ #text{
+  text-align: center;
+  position: relative;
+
+} 
+
+ .card1{
+    border: solid 1px black;
+    height: 187px;
+    width: 280px;
+    transition: 0.5s ease-in-out;
+    
+}
+.card1:hover{
+    box-shadow: 1px 4px 25px 5px rgb(148, 148, 148);
+    transition: 0.5s;
+    transform: scale(1.05);
+    
+}
+
+.card2{
+    border: solid 1px black;
+    height: 187px;
+    width: 280px;
+    transition: 0.5s ease-in-out;
+}
+.card2:hover{
+    box-shadow: 1px 4px 25px 5px rgb(148, 148, 148);
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+
+.card3{
+    border: solid 1px black;
+    height: 187px;
+    width: 280px;
+    transition: 0.5s ease-in-out;
+
+}
+.card3:hover{
+    box-shadow: 1px 4px 25px 5px rgb(148, 148, 148);
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 1330px){
+    .content{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+}
+
+@media (max-width: 1200px){
+   .content{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+}
+
+@media (max-width: 1080px) {
+  .content{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 890px) {
+    .content{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+@media (max-width: 780px) {
+  .content{
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+@media (max-width: 500px) {
+    .content{
+      grid-template-columns: 1fr;
+    }
+  }
 
 </style>
