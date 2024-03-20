@@ -1,21 +1,20 @@
 <template>
   <navbar/>
   <router-view/>
-  
-
+  <TimeKeepers/>
 </template>
 
 <script>
 import navbar from './components/navbar.vue'
+import TimeKeepers from './components/TimeKeepers.vue'
+
 
 export default {
   components: {
-    navbar
-  }
-
-
+    navbar,
+    TimeKeepers,
 }
-
+}
 </script>
 
 <style>

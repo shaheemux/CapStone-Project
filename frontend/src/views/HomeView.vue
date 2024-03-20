@@ -1,7 +1,5 @@
 <template>
  <div class="home">  
-  <div class="company">TimeKeepers</div>
-
    <div id="default-carousel" class="relative w-full p-4" data-carousel="slide">
     
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -9,7 +7,7 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i.postimg.cc/8PJfpYXc/give-me-an-image-of.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             <!-- <h1 class="btn absolute"><router-link to="">View All</router-link></h1> -->
-            <button type="button" class="absolute focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
+            <button type="button" class="absolute">Green</button>
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -43,36 +41,6 @@
             <span class="sr-only">Next</span>
         </span>
     </button>
-  </div>
-  
-
-<div class="grid grid-cols-2 md:grid-cols-3 gap-7 p-8">
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/qBCgbyVW/masculine-menhappy-c-jpg.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/CMDLH0bg/fossil-watches-singl-jpg-3.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/7651QhwX/images-of-fossil-wat-jpg-4.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" id="img" src="https://i.postimg.cc/prcB7fCL/fossil-watches-singl-jpg-2.jpg" alt="">
-    </div>
-    
-
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/43QDF3KF/images-of-fossil-wat-jpg-1.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/YCHRhz9T/i-am-going-to-reques-jpg.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/HLgzK4XT/fossil-watches-singl-2.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/mDZwZLmq/fossil-watches-singl-jpg-1.jpg" alt="">
-    </div>
   </div>
  </div>
 </template>
@@ -113,26 +81,5 @@ img{
       transform: translate3d(0, 0, 0);
     }
 }
-
-
-.h-auto{
-    animation: fadeInDownBigFromLeft 1s ease-out;
-}
-
-
-@keyframes animate__fadeInLeft {
- from {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
- }
-
- to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
- }
-}
-
-
-
 
 </style>
