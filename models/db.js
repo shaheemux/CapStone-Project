@@ -82,5 +82,43 @@ const checkPassword = async (mail_add,User_password) => {
 
 
 
+async function getWomens() {
+    const [Women] = await pool.query(`
+    SELECT * FROM 
+    Womens 
+    `)
+    return Women
+}
+async function getWomen(id) {
+    const [Women] = await pool.query(`
+    SELECT * FROM Womens WHERE id = ?
+    `, [id])
+    return Women
+}
 
-export  {getProducts, getProduct, deleteProduct, editProduct, addProduct, getUsers, getUser, deleteUser,addUser, editUser, checkPassword}
+async function deleteWomen(id){
+    const [Women] = await pool.query(`
+    DELETE FROM Womens
+     WHERE id = ?
+    `, [id])
+}
+
+const editWomens=async(prod_name,price,prod_url,id)=>{
+    await pool.query(`
+    UPDATE Womens SET prod_name=?, price=?,prod_url=? 
+    WHERE id=? `,
+     [prod_name,price,prod_url,id])
+     return getWomens()
+}
+
+
+const addWomens=async(prod_name,price,prod_url)=>{
+    await pool.query(`
+    INSERT INTO Womens (prod_name,price,prod_url) values(?,?,?) `,
+    [prod_name,price,prod_url])
+} 
+
+
+
+
+export  {getProducts, getProduct, deleteProduct, editProduct, addProduct, getUsers, getUser, deleteUser,addUser, editUser, checkPassword , getWomens, getWomen, deleteWomen, editWomens, addWomens}

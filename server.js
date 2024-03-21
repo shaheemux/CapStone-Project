@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { config } from 'dotenv'
 import productsRoute from './routes/products.js'
+import womensRoute from './routes/womens.js'
 import usersRoute from './routes/users.js';
 import loginRouter from './routes/login.js';
 import {auth} from './middleware/authentication.js'
@@ -19,6 +20,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static( 'public' ))
 app.use('/products', productsRoute)
+app.use('/womens', womensRoute)
 app.use('/users', usersRoute) 
 app.use('/login',auth,loginRouter)
 
