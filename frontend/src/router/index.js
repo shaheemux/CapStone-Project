@@ -29,12 +29,24 @@ const routes = [
     path: '/gallery',
     name: 'gallery',
     component: () => import('../views/gallery.vue')
+  },
+  {
+    path: '/Products1',
+    name: 'Products1',
+    component: () => import('../views/Products1.vue')
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/contact.vue')
   }
+
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
+
 
 export default router

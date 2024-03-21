@@ -41,22 +41,27 @@
     </button>
   </div>
  
+
   <div class="aside">
-    <div class="content">
+    <div class="typing">
+     <div class="department" id="wrapper">Choose a department</div>
+     </div>
+       <div class="content">
+
 
         <div class="card1" id="text">
-            <img src="https://i.postimg.cc/G2qvZdHB/style.jpg" alt="">
-            <p class="p-4">Mens Watches</p>
+            <router-link to="/Products" class="p-4 absolute top-0 left-0">Mens Watches</router-link>
+            <img src="https://i.postimg.cc/G2qvZdHB/style.jpg" class="img"  alt="">
         </div>
 
         <div class="card2" id="text">
-            <img src="https://i.postimg.cc/K8pWPhZ5/what-womens-watches-are-in-fashion-cover.webp" style="height: 185px;" alt="">
-            <p class="p-4"></p>
+            <router-link to="/Products1" class="p-4 absolute top-0 left-0">Womens Watches</router-link>
+            <img src="https://i.postimg.cc/K8pWPhZ5/what-womens-watches-are-in-fashion-cover.webp" class="img" style="height: 185px;" alt="">
         </div>
 
         <div class="card3" id="text">
-            <img src="https://i.postimg.cc/D0Y9Hwpz/istockphoto-609908294-612x612.jpg" alt="">
-            <p style="color: rgb(0, 0, 0); padding: 1rem;"></p>
+            <router-link to="/gallery" class="p-4 absolute top-9 left-12">Gallery</router-link>
+            <img src="https://i.postimg.cc/D0Y9Hwpz/istockphoto-609908294-612x612.jpg" class="img" alt="">
         </div>    
     </div>
   </div>
@@ -78,9 +83,37 @@
     justify-content: flex-start;
 }
 
+.p-4{
+    font-size: 3rem;
+}
+
 .relative{
    animation: fadeInDownBigFromLeft 1s ease-out;
 }
+
+#text{
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.content{
+    animation: fadeInDownBigFromRight 1s ease-out !important;
+}
+
+@keyframes fadeInDownBigFromRight {
+ from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+ }
+
+ to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+ }
+}
+
 
 @keyframes fadeInDownBigFromLeft {
     from {
@@ -94,7 +127,6 @@
     }
 }
 
-
 .aside{
     padding: 2rem;
     display: flex;
@@ -102,7 +134,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    display: grid;
+    display: grid;  
 }
 
 .content{
@@ -114,10 +146,9 @@
     margin: auto;
 }
 
- #text{
+#text{
   text-align: center;
   position: relative;
-
 } 
 
  .card1{
@@ -131,8 +162,8 @@
     box-shadow: 1px 4px 25px 5px rgb(148, 148, 148);
     transition: 0.5s;
     transform: scale(1.05);
+}    
     
-}
 
 .card2{
     border: solid 1px black;
@@ -147,6 +178,8 @@
 }
 
 
+
+
 .card3{
     border: solid 1px black;
     height: 187px;
@@ -159,6 +192,8 @@
     transition: 0.5s;
     transform: scale(1.05);
 }
+
+
 
 
 @media (max-width: 1330px){
@@ -196,4 +231,39 @@
     }
   }
 
+.department{
+    padding: 1rem;
+    font-size: 2rem;
+    text-decoration: underline;
+    font-family: "Calligraffitti", cursive;
+}
+
+
+.department{
+    animation: fadeInDownBigFromTop 1s ease-out !important;
+}
+
+@keyframes fadeInDownBigFromTop {
+ from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+ }
+
+ to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+ }
+}
+
+@keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
 </style>

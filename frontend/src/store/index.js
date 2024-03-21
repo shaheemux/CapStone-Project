@@ -6,6 +6,7 @@ export default createStore({
   state: {
     users: null,
     user: null,
+    womens: [],
     products: null,
     product: null,
     spinner: false,
@@ -30,6 +31,9 @@ export default createStore({
     setSpinner(state, value){
       state.spinner = value
     },
+    setWomens(state, womens) {
+      state.womens = womens;
+   },
     setToken(state, token){
       state.token = token
     },
@@ -44,6 +48,8 @@ export default createStore({
     },
   },
   actions: {
+ 
+//FETCHING PRODUCTS FORM PRODUCTS TABLE
     async fetchUsers(context) {
       try{
         const {data} = await axios.get(`${lifeURL}users`)
@@ -74,6 +80,20 @@ export default createStore({
       }
     },
 
+//womens table fetching data
+
+async fetchWomens(context) {
+  try {
+     const { data } = await axios.get(`${lifeURL}/products1`);
+     console.log("Fetched data:", data); // Add this line to check the fetched data
+     context.commit("setWomens", data);
+  } catch (e) {
+     context.commit("setMsg", "An error occurred.");
+  }
+ },
+ 
+
+    
      // Action to delete a user
      async deleteUser(context, userID) {
       try {

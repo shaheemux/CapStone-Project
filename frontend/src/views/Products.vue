@@ -67,10 +67,9 @@ export default {
 
 <style scoped>
 .products{
-  margin-top: 4.5rem;
+  margin-top: 5.5rem;
   text-align: center;
   height: 100%;
-  border: solid 1px;
   font-family: "Thasadith", sans-serif !important;
 }
 
