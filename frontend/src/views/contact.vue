@@ -2,7 +2,7 @@
     
 <div class="contact">
   <div class="text-center">
-   <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" data-drawer-target="drawer-contact" data-drawer-show="drawer-contact" aria-controls="drawer-contact">
+   <button class="text-white bg-gray-500 hover:bg-white-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" data-drawer-target="drawer-contact" data-drawer-show="drawer-contact" aria-controls="drawer-contact">
    Reach out to Us
    </button>
   </div>
@@ -41,13 +41,34 @@
       <a href="#" class="hover:underline">212-456-7890</a>
    </p>
  </div>
+
+ 
+ <div class="aside">
+       <div class="content">
+
+
+        <div class="card1" id="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati perspiciatis, facere quod iste consequuntur et illo deleniti id voluptatum in necessitatibus possimus quidem sit iusto tempora cupiditate, hic, quisquam quas.
+        </div>
+
+        <div class="card2" id="text">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta reiciendis ipsum ullam quisquam dolorem nobis, libero ex provident. A voluptatum ipsum ullam magnam molestiae amet modi consectetur non voluptas at.
+        </div>
+
+        <div class="card3" id="text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae delectus accusamus consectetur eius voluptate quis placeat corrupti nostrum saepe quam voluptas, tempore, corporis ratione. Eligendi porro quae obcaecati praesentium asperiores?
+        </div>    
+    </div>
+   </div>
+
 </div>
 </template>
 
 <style scoped>
  .contact{
     margin-top: 8rem;
-    border: solid 1px;
+    background-color: #f1f1f1;
+    padding: 1rem;
     height: 100%;
  }
 
@@ -55,4 +76,127 @@
     margin-top: 5.5rem;    
     border-radius: 4px;
  }
+
+ 
+
+@keyframes fadeInDownBigFromRight {
+ from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+ }
+
+ to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+ }
+}
+
+
+@keyframes fadeInDownBigFromLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+.aside{
+    padding: 2rem;
+    display: flex;
+    margin-TOP: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    display: grid;  
+}
+
+.content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 35px;
+    padding: 1rem;
+    margin: auto;
+}
+
+#text{
+  text-align: center;
+  position: relative;
+  padding: 1rem;
+} 
+
+ .card1{
+    border-right: 1px solid;
+    height: 250px;
+    width: 380px;
+    animation: fadeInDownBigFromLeft 1s ease-out;
+}
+
+@keyframes fadeInDownBigFromLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+.card2{
+    border-right: 1px solid;
+    height: 250px;
+    width: 380px;
+    
+}
+
+.card3{
+    border-right: 1px solid;
+    height: 250px;
+    width: 380px;
+    animation: fadeInDownBigFromRight 1s ease-out !important;
+}
+
+
+
+
+@media (max-width: 1330px){
+    .content{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+}
+
+@media (max-width: 1200px){
+   .content{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+}
+
+@media (max-width: 1080px) {
+  .content{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 890px) {
+    .content{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+@media (max-width: 780px) {
+  .content{
+      grid-template-columns: 1fr;
+    }
+  }
+@media (max-width: 500px) {
+    .content{
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

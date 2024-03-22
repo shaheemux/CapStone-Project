@@ -2,8 +2,8 @@
   <div class="about">
     <div class="grid-container">
         <div class="grid-item1">
-            <p style="padding: 1rem;"><span class="span">TimeKeepers is the world’s leading watch house.
-            </span><br>We’re more than connoisseurs.....<span>we're collectors too. We would never tell you to buy a watch we wouldn't buy ourselves first.</span></p>
+          <span class="span">TimeKeepers is the world’s leading Watchhouse.</span>
+            <p style="padding: 1rem;">We’re more than connoisseurs.....we're collectors too. We would never tell you to buy a watch we wouldn't buy ourselves first. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsa maiores ullam accusantium quia, tempore dolore totam, exercitationem ipsam libero consectetur numquam dolorem corrupti consequatur dolores veniam? Quam, ratione perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam quidem officiis similique maxime, laborum tenetur quos quibusdam beatae sequi explicabo rerum doloremque assumenda ut necessitatibus id sint voluptatibus modi.</p>
         </div>
         <div class="grid-item">
             <img src="https://i.postimg.cc/wMx97xjn/Worlds-Leading-Watch-House.avif" style="width: 100%;">
@@ -22,13 +22,11 @@
     margin-top: 4.5rem;
 }
  
-p{
-  padding: 1rem;
-}
 
 .span{
   font-size: 2rem;
   font-weight:bolder;
+  text-align: left !important;
 }
 
 span{
