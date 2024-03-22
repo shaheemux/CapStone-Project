@@ -1,59 +1,49 @@
 <template>
     <div class="gallery">
-       <div class="grid grid-cols-2 md:grid-cols-3 gap-7 p-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-7 p-8">
          <div v-for="(image, index) in images" :key="index">
            <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" :src="image.src" :alt="image.alt">
          </div>
        </div>
+     </div>
 
-
-
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-6">
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/3RL8FQcv/aesthetic-fossil-wat-jpg-2.jpg" alt="">
     </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-        </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/W3fDbZjC/fossil-watches-aesth-jpg-2.jpg" alt="">
     </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-        </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/J4J0HqXc/fossil-watches-aesth-jpg.jpg" alt="">
     </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-        </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/Zqmd5QDd/fossil-watches-aesth-jpg-3.jpg" alt="">
     </div>
-</div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/Jtwhdyfk/fossil-watches-aesth-jpg-1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/G2ytPJNC/fossil-watches-aesth-jpg-4.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/x1BSGDSX/fossil-watch-aesthet-jpg.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/kG2cvZC5/fossil-watch-aesthet-jpg-1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/Jh7dBpss/fossil-watch-aesthet-jpg-2.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/xCwRg51y/fossil-watch-aesthet-jpg-3.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/XYskt4vv/fossil-watch-aesthet-jpg-4.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-110" src="https://i.postimg.cc/CM6YMf6C/fossil-watch-aesthet-jpg-6.jpg" alt="">
+    </div>
 
     </div>
    </template>
@@ -79,7 +69,7 @@
 <style scoped>
 
 .gallery {
-    margin-top: 4rem;
+    margin-top: 5.5rem;
 }
 
 .h-auto{
