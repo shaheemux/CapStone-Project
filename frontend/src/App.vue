@@ -1,20 +1,39 @@
 <template>
+ <spinner v-if="loading"/>
+ <div id="app">
   <navbar/>
-  <router-view/>
+  <router-view/> 
+ </div>
   <TimeKeepers/>
+  <!-- <footer /> -->
 </template>
 
 <script>
 import navbar from './components/navbar.vue'
+import spinner from './components/spinner.vue'
 import TimeKeepers from './components/TimeKeepers.vue'
+// import footer from './components/footer.vue'
 
 
 export default {
   components: {
     navbar,
+    spinner,
     TimeKeepers,
+    // footer
 }
 }
+// data(){
+//    return {
+//     loading: true,
+//    };
+// },
+//  mounted () {
+//   setTimeout(() =>{
+//     this.loading = false;
+//   }, 2000);
+//  }
+// }
 </script>
 
 <style>

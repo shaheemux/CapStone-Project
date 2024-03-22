@@ -72,21 +72,5 @@
     margin-top: 5.5rem;
 }
 
-.h-auto{
-    animation: fadeInDownBigFromLeft 1s ease-out !important;
-}
-
-
-@keyframes animate__fadeInLeft {
- from {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
- }
-
- to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
- }
-}
 
 </style>

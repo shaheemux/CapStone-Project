@@ -5,12 +5,12 @@
          <input v-model="searchQuery" type="text" placeholder="Search product by name" class="form-control">
        </div>
        <div class="col">
-         <button @click="toggleSorting" class="btn btn-success">{{ sorting ? 'Sorting by price' : 'Sorting by name' }}</button>
+         <button @click="toggleSorting" class="btn btn-success" style="border: solid 1px; padding: 6px;" >{{ sorting ? 'Sorting by highest' : 'Sorting by Lowest' }}</button>
        </div>
      </div>
  
      <div class="row mt-3" v-if="womens">
-       <div class="col-md-4" v-for="womens in filteredWomens" :key="pr.id">
+       <div class="col-md-4" v-for="womens in filteredWomens" :key="womens.id">
          <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
            <a href="#">
              <img class="p-8 rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-110" :src="womens.prod_url" alt="Product Image">
@@ -21,6 +21,7 @@
              </a>
              <div class="flex items-center justify-between">
                <span class="text-xl font-bold text-gray-900 dark:text-white">R{{ womens.price }}.00</span>
+               <button><img src="https://i.postimg.cc/N0LNn04v/icons8-cart-100.png" style="height: 20px;"></button>
              </div>
            </div>
          </div>
@@ -58,9 +59,11 @@
      toggleSorting() {
        this.sorting = !this.sorting;
      },
+
   },
   mounted() {
      this.$store.dispatch('fetchWomens');
+     this.filteredWomens
   },
  };
  </script>

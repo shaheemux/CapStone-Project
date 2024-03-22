@@ -5,7 +5,7 @@
       <input v-model="searchQuery" type="text" placeholder="Search product by name" class="form-control">
     </div>
     <div class="col">
-      <button @click="toggleSorting" class="btn btn-success">{{ sorting ? 'Sorting by price' : 'Sorting by name' }}</button>
+      <button @click="toggleSorting"  class="btn btn-success" style="border: solid 1px; padding: 6px;">{{ sorting ? 'Sorting by Highest' : 'Sorting by lowest' }}</button>
     </div>
  </div>
 
@@ -21,6 +21,7 @@
           </a>
           <div class="flex items-center justify-between">
             <span class="text-xl font-bold text-gray-900 dark:text-white">R{{ product.price }}.00</span>
+            <button><img src="https://i.postimg.cc/N0LNn04v/icons8-cart-100.png" style="height: 20px;"></button>
           </div>
         </div>
       </div>

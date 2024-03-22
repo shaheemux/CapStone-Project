@@ -7,9 +7,9 @@ export default createStore({
     users: null,
     user: null,
     womens: [],
+    spinner: [],
     products: null,
     product: null,
-    spinner: false,
     token: null,
     msg: null
   },
@@ -17,13 +17,13 @@ export default createStore({
   },
   mutations: {
     setUsers(state, users){
-      state.users =users
+      state.users = users
     },
     setUser(state, user){
-      state.user =user
+      state.user = user
     },
     setProducts(state, products){
-      state.products =products
+      state.products = products
     },
     setProduct(state, product){
       state.product = product
@@ -33,7 +33,7 @@ export default createStore({
     },
     setWomens(state, womens) {
       state.womens = womens;
-   },
+    },
     setToken(state, token){
       state.token = token
     },
@@ -45,6 +45,16 @@ export default createStore({
       if (index !== -1) {
         state.users.splice(index, 1);
       }
+    },
+    // Add the new mutations here
+    updateProduct(state, { id, updatedData }) {
+      const index = state.products.findIndex(product => product.id === id);
+      if (index !== -1) {
+        state.products[index] = { ...state.products[index], ...updatedData };
+      }
+    },
+    removeProduct(state, id) {
+      state.products = state.products.filter(product => product.id !== id);
     },
   },
   actions: {
@@ -84,7 +94,7 @@ export default createStore({
 
 async fetchWomens(context) {
   try {
-     const { data } = await axios.get(`${lifeURL}/products1`);
+     const { data } = await axios.get(`${lifeURL}/womens`);
      console.log("Fetched data:", data); // Add this line to check the fetched data
      context.commit("setWomens", data);
   } catch (e) {

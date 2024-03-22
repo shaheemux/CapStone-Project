@@ -39,7 +39,7 @@
        </button>
      </div>
      <p class="signup">Don't have an account?
-       <a rel="noopener noreferrer" href="#" class="">Sign up</a>
+       <router-link rel="noopener noreferrer" to="/signup" class="">Sign up</router-link>
      </p>
    </div>
   </div>
